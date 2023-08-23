@@ -6,10 +6,11 @@
 
 <script>
 import YummyMeal from "./components/YummyMeal.vue";
+import { ref } from "vue";
 export default {
   components: { YummyMeal },
   setup() {
-    const name = "The Snazzy Burger";
+    const name = ref("The Snazzy Burger")
     const placeOrder = () => {
       alert("Your order has been placed!")
     }
