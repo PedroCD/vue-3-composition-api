@@ -1,21 +1,22 @@
 <template>
 <p>
   <strong>{{name}}</strong>
-  {{price}}
+  <YummyMealPrice :price="price" :currencySymbol="currencySymbol"/>
   <button @click="addToCart">Add to Cart</button>
 </p>
 </template>
 
 <script>
+import YummyMealPrice from "./YummyMealPrice.vue";
 export default {
+  components: {YummyMealPrice},
   props: {
     name: String,
     price: Number,
   },
   setup(props, {emit}) {
     const addToCart = () => emit("addToCart", props.name)
-
-    return { addToCart}
+    return { addToCart }
   }
 }
 </script>
